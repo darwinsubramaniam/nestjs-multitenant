@@ -9,6 +9,7 @@ export class CatsService {
   private readonly catsRepository: Repository<Cat>;
 
   constructor(
+    // This is is not root user but user of this schema 
     @Inject(CONNECTION) connection: Connection,
   ) {
     this.catsRepository = connection.getRepository(Cat);
@@ -18,11 +19,11 @@ export class CatsService {
     const cat = new Cat();
     cat.name = createCatDto.name;
 
-    const queryRunner: QueryRunner =
-    this.catsRepository.manager.connection.createQueryRunner();
-    queryRunner.createSchema(this.catsRepository.metadata.schema);
-    const table = Table.create(this.catsRepository.metadata, this.catsRepository.manager.connection.driver);
-    queryRunner.createTable(table);
+    // const queryRunner: QueryRunner =
+    // this.catsRepository.manager.connection.createQueryRunner();
+    // queryRunner.createSchema(this.catsRepository.metadata.schema);
+    // const table = Table.create(this.catsRepository.metadata, this.catsRepository.manager.connection.driver);
+    // queryRunner.createTable(table);
     return this.catsRepository.save(cat);
   }
 

@@ -6,6 +6,7 @@ import { tenancyMiddleware } from './modules/tenancy/tenancy.middleware';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  
 
   app.use(tenancyMiddleware);
 

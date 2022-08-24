@@ -5,4 +5,10 @@ import { Column, Entity } from 'typeorm';
 export class Tenant extends AbstractEntity {
   @Column()
   name: string;
+
+  
+  // username 
+  
+  // encrypted : kubenetes secret hand the key for decrytion 
+  // userpassword 
 }

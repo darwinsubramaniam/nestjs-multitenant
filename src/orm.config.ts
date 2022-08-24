@@ -4,11 +4,11 @@ import { join } from 'path';
 
 module.exports = {
   type: 'postgres',
-  host: 'localhost',
+  host: 'db',
   port: 5432,
-  username: 'd',
-  password: 'd',
-  database: 'cloud-drive',
+  username: 'postgres',
+  password: 'postgres',
+  database: 'postgres',
   namingStrategy: new SnakeNamingStrategy(),
   logging: true,
   autoLoadEntities: true,
